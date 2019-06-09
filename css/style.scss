@@ -201,6 +201,7 @@ header{
 
 .head{
 	position: relative;
+	width: 100%;
 	&__title{
 		font-family: 'Myriad Pro', 'Arial', serif;
 		font-size: 150px;
@@ -235,9 +236,12 @@ header{
 	}
 	
 	&__img{
-		width: 100%;
-		height: auto;
-		transform: translateY(-30%) translateX(30%);
+		width: auto;
+		max-height: calc(100vh - 150px);
+		position: absolute;
+		bottom: 50px;
+		left: 25%;
+		// transform: translateY(-30%) translateX(30%);
 	}
 }
 
@@ -283,6 +287,13 @@ header{
 		justify-content: center;
 		align-items: center;
 	}
+}
+
+.icon-btn{
+	stroke: #181818;
+	stroke: red;
+	stroke-width: 2;
+	fill: none;
 }
 
 .nike__air{
@@ -523,7 +534,93 @@ header{
 			flex-direction: column;
 		}
 	}
+	&__choice{
+		margin: 195px 0 185px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		width: 100%;
+		height: 72px;
+		
+		&-radio1,
+		&-radio2,
+		&-radio3{
+			width: 17px;
+			height: 17px;
+			border-radius: 50%;
+			margin: 0 9px;
+		}
+		&-radio1{
+			background-color: #232323;
+		}
+		&-radio2{
+			background-color: $accent;
+		}
+		&-radio3{
+			background-color: #e1e1e1;
+		}
+		&-line {
+			width: 65px;
+			& span{
+				content: '';
+				height: 2px;
+				width: 45px;
+				background-color: #7f7f7f;
+				margin: 0 9px;
+				display: block;
+			}
+		}
+		&-radio-big{
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			border: 6px solid $accent;
+			margin: 0 9px;
+		}
+		&-number{
+			font-family: 'Poppins', Arial, serif;
+			font-size: 22px;
+			font-weight: 300;
+			color: #000;
+			
+			& span{
+				margin: 0 8px;
+			}
+		}
+		&-btn-left,
+		&-btn-right{
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			width: 28px;
+			height: 72px;
+			border: none;
+			padding: 0;
+			
+			& .btn-left,
+			& .btn-right{
+				height: 20px;
+				width: 11px;
+				color: #c6c6c6;
+				stroke: #c6c6c6;
+				stroke-width: 2;
+			}
+
+			.icon-btn1{
+				color: inherit;
+				stroke: currentColor;
+			}
+
+			&:hover .icon-btn1{
+				// stroke: $accent;
+			}
+			&:hover{
+				color: green;
+			};
+		}
+	}
 }
+
 
 footer{
 	display: block;
