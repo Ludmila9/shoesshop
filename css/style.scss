@@ -8,7 +8,7 @@ $color-text: #888;
 }
 
 body{
-	max-width: 1600px;
+	// max-width: 1600px;
 	margin: 0 auto;
 }
 
@@ -26,9 +26,10 @@ h1, h2, h3{
 }
 
 .container{
-	width: 1170px;
+	max-width: 1600px;
 	height: auto;
 	margin: 0 auto;
+	padding: 0 214px;
 	display: flex;
 	position: relative;
 	&__title{
@@ -40,14 +41,14 @@ h1, h2, h3{
 		}
 	}
 	&_nike__air{
-		padding: 100px 0 50px;
+		padding: 100px 214px 50px;
 	}
 	&_popular{
-		padding: 25px 0 50px;
+		padding: 25px 214px 50px;
 		flex-direction: column;
 	}
 	&_fall{
-		padding: 80px 0 195px;
+		padding: 80px 214px 195px;
 	}
 	&_thought{
 		flex-direction: column;
@@ -55,7 +56,7 @@ h1, h2, h3{
 		align-items: center;
 	}
 	&_blog{
-		padding: 100px 0 0;
+		padding: 100px 214px 0;
 		display: block;
 	}
 	&_footer{
@@ -127,6 +128,11 @@ header{
 	align-items: center;
 	position: absolute;
 	top: 0;
+	& .container{
+		width: 100%;
+		justify-content: space-between;
+		margin: 0;
+	}
 }
 
 .header__line{
@@ -144,7 +150,7 @@ header{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	.menu_circle{
+	& .menu_circle{
 		width: 15px;
 		height: 15px;
 		border: 1px solid #000;
@@ -291,9 +297,13 @@ header{
 
 .icon-btn{
 	stroke: #181818;
-	stroke: red;
 	stroke-width: 2;
 	fill: none;
+	&-left,
+	&-right{
+		width: 11px;
+		height: 18px;
+	}
 }
 
 .nike__air{
@@ -315,7 +325,7 @@ header{
 	&__about{
 		width: 665px;
 		position: absolute;
-		right: 0;
+		right: 214px;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
@@ -493,9 +503,11 @@ header{
 	}
 	&__about{
 		display: flex;
+		justify-content: space-between;
 		&__img{
 			width: 50%;
-			padding: 60px 70px 0 85px;
+			// padding: 60px 70px 0 85px;
+			padding-top: 60px;
 			img{
 				background-color: #FFF;
 				box-shadow: 5px 0 15px 5px rgba(0, 0, 0, 0.1);
@@ -514,7 +526,7 @@ header{
 				border-radius: 5px;
 				position: absolute;
 				top: 165px;
-				left: 0;
+				left: 150px;
 				z-index: -1;
 			}
 			&:after{
@@ -528,7 +540,7 @@ header{
 			}
 		}
 		&__text{
-			width: 50%;
+			width: 45%;
 			padding-top: 45px;
 			display: flex;
 			flex-direction: column;
@@ -541,7 +553,12 @@ header{
 		align-items: center;
 		width: 100%;
 		height: 72px;
-		
+		&-radio{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
 		&-radio1,
 		&-radio2,
 		&-radio3{
@@ -592,11 +609,13 @@ header{
 			display: flex;
 			justify-content: center;
 			text-align: center;
-			width: 28px;
+			width: 38px;
 			height: 72px;
 			border: none;
 			padding: 0;
-			
+			background-color: transparent;
+			margin: 0 5px;
+			outline-style: none;
 			& .btn-left,
 			& .btn-right{
 				height: 20px;
@@ -605,22 +624,9 @@ header{
 				stroke: #c6c6c6;
 				stroke-width: 2;
 			}
-
-			.icon-btn1{
-				color: inherit;
-				stroke: currentColor;
-			}
-
-			&:hover .icon-btn1{
-				// stroke: $accent;
-			}
-			&:hover{
-				color: green;
-			};
 		}
 	}
 }
-
 
 footer{
 	display: block;
@@ -634,17 +640,34 @@ footer{
 		border-top: 1px solid #eeeeee;
 		border-bottom: 1px solid #eeeeee;
 		padding-top: 40px;
+		&-box{
+			display: flex;
+			-webkit-justify-content: flex-start;
+			        justify-content: flex-start;
+			width: 100%;
+		}
 	}
 	&__logo,
 	&__menu,
 	&__department{
-		width: 16.6666%;
+		width: 33.3333%;
 		position: relative;
 		display: block;
 	}
+	&__logo{
+		width: 45%;
+	}
+	
+	&__menu{
+		width: 25%;
+	}
+	
+	&__department{
+		width: 30%;
+	}
 	&__menu{
 		&__items{
-			padding-left: 85px;
+			padding-left: 0px;
 		}
 		&__item{
 			font-family: 'Myriad Pro', Arial, serif;
@@ -658,7 +681,7 @@ footer{
 	}
 	&__department{
 		&__items{
-			padding-left: 85px;
+			padding-left: 0px;
 		}
 		&__item{
 			font-family: 'Myriad Pro', Arial, serif;
@@ -673,9 +696,9 @@ footer{
 
 	&__form{
 		width: 50%;
-		padding-left: 115px;
 		& form{
 			padding: 25px 0;
+			display: flex;
 			& input{
 				width: 305px;
 				height: 48px;
@@ -727,5 +750,893 @@ footer{
 		&:hover{
 			fill: $accent;
 		}
+	}
+}
+
+
+/* Large Devices, Wide Screens */
+@media screen and (min-width : 993px) and (max-width : 1250px){
+	.container{
+		padding: 0 100px 0 50px;
+		&_nike__air{
+			padding: 50px 100px 80px 50px;
+		}
+		&_popular{
+			padding: 50px 100px 50px 50px;
+		}
+		&_fall{
+			padding: 80px 100px 150px 50px;
+		}
+		&_blog{
+			padding: 100px 100px 0 50px;
+		}
+		&_footer{
+			padding: 0 100px 0 50px;
+		}
+		
+	}
+	.menu_nav{
+		margin-right: 0;
+		border: none;
+	}
+	.head__img{
+		max-height: calc(100vh - 350px)
+	}
+	.top_product__text{
+		width: 300px;
+		left: -100px;
+		bottom: 150px;
+	}
+	.sprite{
+		right: 20px;
+		bottom: 63px;
+	}
+
+	.nike__air{
+		width: 100%;
+		position: relative;
+		&__img{
+			width: 520px;
+			height: auto;
+			left: 0px;
+			bottom: -40px;
+			& img{
+				width: 500px;
+			}
+		}
+		&__about{
+			width: 565px;
+			position: absolute;
+			right: 100px;
+		}
+	}
+	.popular__img,
+	.popular__img img,
+	.popular__img__banner{
+		width: 200px;
+		height: 250px;
+	}
+	.popular__price{
+		margin-left: 20px;
+	}
+	.popular__text{
+		margin: 27px 0 17px 20px;
+	}
+	.popular__text span{
+		display: block;
+		margin-left: 0;
+	}
+	.fall{
+		&__img{
+		width: 385px;
+		height: 415px;
+			&:after{
+				right: -150px;
+			}
+			& img{
+				width: 370px;
+				height: auto;
+			}
+		}
+	}
+	.thought__text{
+		padding: 0 150px;
+	}
+	.thought__aerrow{
+		padding-right: 120px;
+		padding-left: 50px;
+		   transform: translateY(-600%);
+	}
+	.blog__about__img{
+		padding-left: 40px;
+		padding-top: 80px;
+		&:before{
+			top: 195px;
+			left: 40px;
+		}
+		&:after{
+			top: -290px;
+			left: 180px;
+		}
+		& img{
+			width: 350px;
+		}
+	}
+	.blog__text{
+		margin-bottom: 50px;
+	}
+	.blog__choice{
+		margin: 180px 0 100px;
+		width: 110%;
+	}
+	.footer__content{
+		display: flex;
+		flex-direction: column;
+		&-box{
+			display: flex;
+			flex-direction: row;
+		}
+	}
+	
+	.footer__logo,
+	.footer__menu,
+	.footer__department{
+		width: 30%;
+	}
+	.footer__form{
+		width: 100%;
+		margin-top: 50px;
+		padding-left: 0;
+		text-align: center;
+	}
+	.footer__form form{
+		display: flex;
+		justify-content: center;
+	}
+	.footer__form form input{
+		width: 450px;
+	}
+	.footer__sprite{
+		justify-content: center;
+	}
+
+}
+
+/* Medium Devices, Desktops */
+@media screen and (min-width : 769px) and (max-width : 992px){
+	.text {
+		color: #000;
+		font-weight: 400;
+	}
+	.container{
+		padding: 0 85px 0 30px;
+		&_nike__air{
+			padding: 50px 85px 80px 30px;
+		}
+		&_popular{
+			padding: 50px 85px 50px 30px;
+		}
+		&_fall{
+			padding: 100px 85px 100px 30px;
+		}
+		&_blog{
+			padding: 100px 85px 0 30px;
+		}
+		&_footer{
+			padding: 0 85px 0 30px;
+		}
+		
+	}
+	.menu_nav{
+		width: 45px;
+		height: 45px;
+		margin-right: 0;
+		border: none;
+	}
+	.head__title{
+		margin-top: 30px;
+		font-size: 120px;
+	}
+	.head__title__small{
+		margin-left: 0;
+		font-size: 22px;
+	}
+	.head__img{
+		max-height: calc(100vh - 420px)
+	}
+	.top_product__text{
+		width: 300px;
+		left: -100px;
+		bottom: 150px;
+		line-height: 20px;
+	}
+	.sprite{
+		right: 20px;
+		bottom: 63px;
+	}
+
+	.nike__air{
+		width: 100%;
+		position: relative;
+		&__img{
+			width: 450px;
+			height: auto;
+			left: 0px;
+			bottom: -40px;
+			& img{
+				width: 430px;
+			}
+		}
+		&__about{
+			width: 300px;
+			position: absolute;
+			right: 30px;
+			padding: 100px 0 100px;
+			&__text{
+				margin-bottom: 50px;
+			}
+		}
+	}
+	.more__right{
+		text-align: center;
+	}
+	.popular__img,
+	.popular__img img,
+	.popular__img__banner{
+		width: 250px;
+		height: 300px;
+	}
+	.popular__price{
+		font-size: 30px;
+		margin-left: 20px;
+		order: 1;
+	}
+	.popular__text{
+		font-size: 16px;
+		margin: 27px 0 17px 20px;
+		order: 2;
+	}
+	.popular__text span{
+		font-size: 16px;
+		display: block;
+		margin-left: 0;
+	}
+	.popular__items{
+		flex-direction: column;
+	}
+	.popular__item{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-top: 20px;
+		&__about{
+			margin-left: 50px;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.fall{
+		&__img{
+		width: 285px;
+		height: 310px;
+			&:after{
+				right: -150px;
+				top: -150px;
+				width: 185px;
+				height: 215px;
+			}
+			& img{
+				width: 270px;
+				height: auto;
+			}
+		}
+		&__about{
+			padding-top: 0;
+			padding-right: 20px;
+			width: 70%;
+		}
+		&__text{
+			padding-right: 0;
+		}
+	}
+	.thought__text{
+		padding: 0 50px;
+	}
+	.thought__aerrow{
+		padding-right: 180px;
+		padding-left: 120px;
+		transform: translateY(0%);
+		margin-top: 35px;
+	}
+	.blog__about{
+		flex-direction: column;
+	    align-items: center;
+	    &__img{
+	    	width: 100%;
+	    	height: 500px;
+	    	padding-left: 160px;
+			padding-top: 80px;
+			position: relative;
+			&:before{
+				top: 20px;
+				left: 80px;
+				position: absolute;
+			}
+			&:after{
+				top: 200px;
+				left: 380px;
+				position: absolute;
+			}
+			& img{
+				width: 350px;
+			}
+	    }
+	    &__text{
+	    	width: 100%;
+	    }
+	}
+	.blog__text{
+		margin-bottom: 50px;
+	}
+	.blog__choice{
+		margin: 50px 0 100px;
+		width: 100%;
+		-webkit-justify-content: center;
+		        justify-content: center;
+	}
+	.footer__content{
+		display: flex;
+		flex-direction: column;
+		&-box{
+			display: flex;
+			flex-direction: row;
+		}
+	}
+	
+	.footer__logo,
+	.footer__menu,
+	.footer__department{
+		width: 33.3333%;
+	}
+	.footer__menu{
+		padding-left: 50px;
+	}
+	.footer__form{
+		width: 100%;
+		margin-top: 50px;
+		padding-left: 0;
+		text-align: center;
+	}
+	.footer__form form{
+		display: flex;
+		justify-content: center;
+	}
+	.footer__form form input{
+		width: 450px;
+	}
+	.footer__sprite{
+		justify-content: center;
+	}
+}
+
+/* Small Devices, Tablets */
+@media screen and (min-width : 481px) and (max-width : 768px){
+	.text {
+		color: #000;
+		font-weight: 400;
+	}
+	.container{
+		padding: 0 85px 0 30px;
+		&_nike__air{
+			padding: 50px 85px 80px 30px;
+		}
+		&_popular{
+			padding: 50px 85px 50px 30px;
+		}
+		&_fall{
+			padding: 100px 85px 100px 30px;
+			flex-direction: column;
+			-webkit-align-items: center;
+			        align-items: center;
+		}
+		&_blog{
+			padding: 100px 85px 0 30px;
+		}
+		&_footer{
+			padding: 0 85px 0 30px;
+		}
+		
+	}
+	.menu_nav{
+		width: 45px;
+		height: 45px;
+		margin-right: 0;
+		border: none;
+	}
+	.head__title{
+		margin-top: 30px;
+		font-size: 120px;
+	}
+	.head__title__small{
+		margin-left: 0;
+		font-size: 22px;
+	}
+	.head__img{
+		max-height: calc(100vh - 550px);
+		bottom: 150px;
+		left: 0;
+	}
+	.top_product__text{
+		width: 300px;
+		left: 50px;
+		bottom: 20px;
+		line-height: 20px;
+		transform: none;
+	}
+	.sprite{
+		right: 20px;
+		bottom: 63px;
+	}
+
+	.nike__air{
+		width: 100%;
+		position: relative;
+		&__img{
+			width: 450px;
+			height: auto;
+			left: 0px;
+			bottom: -40px;
+			& img{
+				width: 430px;
+			}
+		}
+		&__about{
+			width: 300px;
+			position: absolute;
+			right: 30px;
+			padding: 100px 0 100px;
+			&__text{
+				margin-bottom: 100px;
+			}
+		}
+	}
+	.more__right{
+		text-align: center;
+	}
+	.popular__img,
+	.popular__img img,
+	.popular__img__banner{
+		width: 250px;
+		height: 300px;
+	}
+	.popular__price{
+		font-size: 30px;
+		margin-left: 0;
+		order: 1;
+	}
+	.popular__text{
+		font-size: 16px;
+		margin: 27px 0 17px 0;
+		order: 2;
+	}
+	.popular__text span{
+		font-size: 16px;
+		display: block;
+		margin-left: 0;
+	}
+	.popular__items{
+		flex-direction: column;
+	}
+	.popular__item{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-top: 20px;
+		&__about{
+			width: 50%;
+			margin-left: 20px;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.fall{
+		&__img{
+		width: 285px;
+		height: 310px;
+			&:after{
+				right: -150px;
+				top: -150px;
+				width: 185px;
+				height: 215px;
+			}
+			& img{
+				width: 270px;
+				height: auto;
+			}
+		}
+		&__about{
+			padding-top: 0;
+			padding-right: 20px;
+			width: 100%;
+		}
+		&__text{
+			padding-right: 0;
+		}
+		&__bnt{
+			margin-bottom: 30px;
+		}
+	}
+	.thought__text{
+		padding: 0 50px;
+	}
+	.thought__aerrow{
+		padding-right: 60px;
+		padding-left: 20px;
+		transform: translateY(0%);
+		margin-top: 35px;
+	}
+	.blog__about{
+		flex-direction: column;
+	    align-items: center;
+	    width: 100%;
+	    &__img{
+	    	width: 80%;
+	    	height: 500px;
+	    	padding-left: 40px;
+			padding-top: 80px;
+			position: relative;
+			&:before{
+				width: 250px;
+				height: 250px;
+				top: 20px;
+				left: 0px;
+				position: absolute;
+			}
+			&:after{
+				top: 100px;
+				left: 120px;
+				position: absolute;
+			}
+			& img{
+				width: 270px;
+			}
+	    }
+	    &__text{
+	    	width: 100%;
+	    }
+	}
+	.blog__text{
+		margin-bottom: 50px;
+	}
+	.blog__choice{
+		margin: 50px 0 100px -10px;
+		width: 120%;
+		justify-content: center;
+	}
+	.footer__content{
+		display: flex;
+		flex-direction: column;
+		&-box{
+			display: flex;
+			flex-direction: row;
+		}
+	}
+	.footer__logo img{
+		width: 130px;
+	}
+	.footer__logo,
+	.footer__menu,
+	.footer__department{
+		width: 33.3333%;
+	}
+	.footer__menu{
+		padding-left: 50px;
+	}
+	.footer__form{
+		width: 100%;
+		margin-top: 50px;
+		padding-left: 0;
+		text-align: center;
+	}
+	.footer__form form{
+		display: flex;
+		justify-content: center;
+	}
+	.footer__form form input{
+		width: 450px;
+	}
+	.footer__sprite{
+		justify-content: center;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media screen and (max-width : 480px){
+	header{
+		z-index: 200;
+	}
+
+	.text {
+		color: #000;
+		font-weight: 400;
+	}
+	.container{
+		padding: 0 20px 0 20px;
+		&_nike__air{
+			padding: 50px 20px 150px 20px;
+		}
+		&_popular{
+			padding: 50px 20px 50px 20px;
+		}
+		&_fall{
+			padding: 100px 20px 100px 20px;
+			flex-direction: column;
+			align-items: center;
+		}
+		&_blog{
+			padding: 100px 20px 0 20px;
+		}
+		&_footer{
+			padding: 0 20px 0 20px;
+		}
+		
+	}
+	.title{
+		font-size: 32px;
+	}
+	.text{
+		font-size: 14px;
+	}
+	.header__line{
+		display: flex;
+		width: 100%;
+		& .logo img{
+			width: 120px;
+		}
+	}
+	.menu .menu_circle{
+		width: 10px;
+		height: 10px;
+		margin: 0 5px;
+	}
+	.menu_nav{
+		width: 40px;
+		height: 40px;
+		margin-right: 0;
+		border: none;
+		& span{
+			height: 1px;
+		}
+	}
+	
+	.head{
+		height: 690px;
+	}
+	.head__title{
+		margin-top: 30px;
+		font-size: 90px;
+	}
+	.head__title__small{
+		width: 220px;
+		height: 50px;
+		line-height: 50px;
+		margin-left: 0;
+		font-size: 18px;
+		&:before{
+			width: 220px;
+			height: 50px;
+		}
+	}
+	.head__img{
+		max-height: 250px;
+		bottom: 190px;
+		left: 0;
+	}
+	.top_product{
+		height: 800px;
+		position: relative;
+		z-index: 100;
+	}
+	.top_product__text{
+		width: 300px;
+		left: 20px;
+		bottom: 10px;
+		line-height: 18px;
+		transform: none;
+		position: absolute;
+	}
+	.sprite{
+		right: 20px;
+		bottom: 63px;
+		display: none;
+	}
+
+	.nike__air{
+		width: 100%;
+		position: relative;
+		&__img{
+			width: 300px;
+			height: auto;
+			left: 0px;
+			bottom: -40px;
+			& img{
+				width: 280px;
+			}
+		}
+		&__about{
+			width: 300px;
+			position: absolute;
+			right: 0;
+			padding: 50px 0 50px;
+			text-align: right;
+			&__text{
+				margin-bottom: 60px;
+				padding-right: 0;
+			}
+		}
+	}
+	.more__right{
+		text-align: center;
+	}
+	.popular__img,
+	.popular__img img,
+	.popular__img__banner{
+		width: 180px;
+		height: 220px;
+	}
+	.popular__price{
+		font-size: 30px;
+		margin-left: 0;
+		order: 1;
+	}
+	.popular__text{
+		font-size: 16px;
+		margin: 27px 0 17px 0;
+		order: 2;
+	}
+	.popular__text span{
+		font-size: 16px;
+		display: block;
+		margin-left: 0;
+	}
+	.popular__items{
+		flex-direction: column;
+	}
+	.popular__item{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-top: 20px;
+		&__about{
+			width: 50%;
+			margin-left: 20px;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.fall{
+		&__img{
+		width: 235px;
+		height: 255px;
+			&:after{
+				right: -80px;
+				top: -150px;
+				width: 185px;
+				height: 215px;
+			}
+			& img{
+				width: 220px;
+				height: auto;
+			}
+		}
+		&__about{
+			padding-top: 0;
+			padding-right: 20px;
+			width: 100%;
+		}
+		&__text{
+			padding-right: 0;
+		}
+		&__bnt{
+			margin-bottom: 30px;
+		}
+	}
+	.thought__text{
+		padding: 0 50px;
+	}
+	.thought__aerrow{
+		padding-right: 60px;
+		padding-left: 20px;
+		transform: translateY(0%);
+		margin-top: 35px;
+	}
+	.blog__about{
+		flex-direction: column;
+	    align-items: center;
+	    width: 100%;
+	    &__img{
+	    	width: 70%;
+	    	height: 370px;
+	    	padding-left: 0;
+			padding-top: 40px;
+			position: relative;
+			overflow: hidden;
+			&:before{
+				display: none;
+			}
+			&:after{
+				top: 0px;
+				left: 0px;
+				position: absolute;
+			}
+			& img{
+				width: 205px;
+			}
+	    }
+	    &__text{
+	    	width: 100%;
+	    }
+	}
+	.blog__text{
+		margin-bottom: 50px;
+	}
+	.blog__choice{
+		margin: 50px 0 100px -10px;
+		width: 100%;
+		justify-content: center;
+		flex-direction: column;
+		&-btn{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+	.footer__content{
+		display: flex;
+		flex-direction: column;
+		&-box{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	
+	.footer__logo img{
+		width: 130px;
+	}
+	.footer__logo,
+	.footer__menu,
+	.footer__department{
+		width: 100%;
+		text-align: center;
+	}
+	.footer__menu{
+		padding-left: 0;
+	}
+	.footer__form{
+		width: 100%;
+		margin-top: 50px;
+		padding-left: 0;
+		text-align: center;
+	}
+	.footer__form form{
+		display: flex;
+		justify-content: center;
+	}
+	.footer__form form input{
+		width: 450px;
+	}
+	.footer__sprite{
+		justify-content: center;
 	}
 }
